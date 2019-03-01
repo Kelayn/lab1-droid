@@ -19,7 +19,7 @@ import a1.labs.kelayn.lab1.R;
 public class RecyclerAdapter extends
         RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder> {
     private List<String> textList;
-    private Stringify stringify;
+    private Stringify stringify = new Stringify();
     public RecyclerAdapter(List<String> list){
         this.textList = list;
     }
@@ -53,7 +53,7 @@ public class RecyclerAdapter extends
 
         ImageView pic;
         TextView text;
-        LinearLayout layout;
+        ConstraintLayout layout;
 
 
         public RecyclerViewHolder(@NonNull View itemView) {

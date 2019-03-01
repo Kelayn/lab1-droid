@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LinkedList<String> list = new LinkedList<>();
+        for (int i = 0; i<1000000; i++) list.add("");
         setContentView(R.layout.activity_main);
-        RecyclerView recyclerView = findViewById(R.id.cLayout);
+        RecyclerView recyclerView = findViewById(R.id.myRec);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         RecyclerAdapter adapter = new RecyclerAdapter (list);
         recyclerView.setAdapter(adapter);
