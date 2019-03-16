@@ -37,7 +37,7 @@ public class RecyclerAdapter extends
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int i) {
         int number = i+1;
-        holder.text.setText(stringify.numberToString(number));
+        holder.text.setText(stringify.getNumberOrdinal(number));
         int backgroundColor = ContextCompat.getColor(holder.itemView.getContext(),
                 number % 2 == 0 ? R.color.gray : R.color.white);
         holder.layout.setBackgroundColor(backgroundColor);
