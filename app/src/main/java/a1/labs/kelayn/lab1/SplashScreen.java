@@ -16,16 +16,18 @@ public class SplashScreen extends AppCompatActivity {
         ImageView img = findViewById(R.id.imageView);
         img.setImageResource(R.drawable.background_pic);
         img.setVisibility(View.VISIBLE);
-        Handler handler = new Handler();
-        handler.postDelayed(() -> {
-            try {
-                Thread.sleep(2000, 20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
-        }, 300);
+        if (savedInstanceState == null) {
+            Handler handler = new Handler();
+            handler.postDelayed(() -> {
+                try {
+                    Thread.sleep(2000, 20);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }, 300);
+        }
     }
 }
